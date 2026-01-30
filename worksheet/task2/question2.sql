@@ -2,4 +2,4 @@
 -- Expected Columns:
 -- StudentId, FirstName, LastName, DateOfBirth
 
-SELECT StudentId, FirstName, LastName FROM Student ORDER BY DateOfBirth ASC
+SELECT StudentId, FirstName, LastName, DateOfBirth FROM Student ORDER BY DateOfBirth ASC LIMIT 5;
