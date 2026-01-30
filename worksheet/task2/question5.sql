@@ -9,11 +9,13 @@ SELECT
     COALESCE(SUM(Course.Credits), 0) AS TotalCreditsPassed
 FROM
     Student
-LEFT JOIN
+JOIN
     Enrolment ON Student.StudentId = Enrolment.StudentId AND Enrolment.Grade >= 40
-LEFT JOIN
+JOIN
     Course ON Enrolment.CourseId = Course.CourseId
 GROUP BY
     Student.StudentId,
     Student.FirstName,
-    Student.LastName;   
+    Student.LastName
+HAVING 
+    SUM(Course.Credits) >= 40; 
